@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <style>
+            p{
+                font-size:30px;
+                font-style:italic;
+                color:#abcdef;
+            }
+        </style>
+        <body>
+            {%include "index.html" %}
+            {% block head %}
+            {% endblock %}
+            <form method="POST" action="#">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="Submit" value="LOGIN">
+
+            </form>
+        </body>
+    </head>
+</html>

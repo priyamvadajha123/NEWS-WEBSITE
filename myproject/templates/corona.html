@@ -1,0 +1,98 @@
+<html>
+<head>
+  <style>
+    body{
+      background-image: url("https://scitechdaily.com/images/Remdesivir-Heparin-Viral-Trap-scaled.jpg");
+      background-repeat: repeat;
+    }
+  </style>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body >
+    {% include "index.html" %}
+    {% block head %}
+    {% endblock %}
+  <section class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      
+      <div class="flex flex-wrap -m-4 text-center">
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg" style="background-color: whitesmoke;">
+            <img src="https://img.icons8.com/fluent/96/000000/bullish.png"/>
+ 
+            <h2 class="title-font font-medium text-3xl text-gray-900">{{a}}</h2>
+            <p class="leading-relaxed">Total cases</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg" style="background-color: whitesmoke;">
+            <img src="https://img.icons8.com/bubbles/100/000000/protection-mask.png"/>
+
+            <h2 class="title-font font-medium text-3xl text-gray-900">{{b}}</h2>
+            <p class="leading-relaxed">Active</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg" style="background-color: whitesmoke;">
+            <img src="https://img.icons8.com/color/96/000000/recovery.png"/>
+
+            <h2 class="title-font font-medium text-3xl text-gray-900">{{c}}</h2>
+            <p class="leading-relaxed">Recovered</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg" style="background-color: whitesmoke;">
+            <img src="https://img.icons8.com/cute-clipart/96/000000/headstone.png"/>
+
+
+            <h2 class="title-font font-medium text-3xl text-gray-900">{{d}}</h2>
+            <p class="leading-relaxed">Deaths</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <a href="/users/helpline/" target=_blank>
+    <marquee direction = "right" style="color: #ccff00; font-size: large ;">__Please click here for <b>HELPLINE NO.</b>__
+    </marquee></a>
+  </section>
+  <br>
+  <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="80%" height="600px" scrolling="no" style="width: 90%; height:500px;padding-left: 10%;">no Support</iframe>
+  <br>
+  <br>
+  <div style="padding-left: 10%;padding-right: 10%; padding-top: 10%;padding-bottom: 5%;">
+<table class="table table-hover" style="border: 2px solid black;">
+  <thead style=" background-color: black;color: white;width:10px">
+    <tr>
+      <th scope="col" style="font-size: x-large;" >Sno.</th>
+      <th scope="col" style="font-size: x-large;">States</th>
+      <th scope="col" style="font-size: x-large;">TotalConfirmed</th>
+      <th scope="col" style="font-size: x-large;">Discharged</th>
+      <th scope="col" style="font-size: x-large;">Deaths</th>
+      
+    
+    </tr>
+  </thead>
+
+    <tbody style=" background-color: rgb(213, 221, 224);">
+        {% for a,b,c,d,e in z %}
+        
+        <tr>
+        <th scope="row" style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: large;">{{a}}</th>
+        <td style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: large;">{{b}}</td>
+        <td style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:large">{{c}}</td>
+        <td style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:large">{{d}}</td>
+        <td style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:large">{{e}}</td>
+        </tr>
+        
+        {% endfor %}
+    </tbody>
+
+</table>
+</div>
+
+</body>
+</html>
